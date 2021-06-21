@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ld.dao.RoomDao">
+   <select id="getRooms" resultType="Room">
+	   select *
+	   from room;
+   </select>
+    <select id="getFreeRooms" resultType="java.lang.Integer">
+	   select id
+	   from room
+	   where position="空闲";
+   </select>
+	<update id="changePosition" parameterType="java.lang.Integer">
+		update room
+		set position ="已住"
+		where id=#{id}
+	</update>
+	<select id="getPriceByRoomid" resultType="java.lang.Double">
+		select price
+		from room
+		where id=#{id}
+	</select>
+
+</mapper>

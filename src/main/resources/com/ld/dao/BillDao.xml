@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ld.dao.BillDao">
+    <insert id="addBill"  parameterType="Bill">
+       insert into orderbill(customerid,roomid,customerName,price,period) values(
+       #{customerid},#{roomid},#{customerName},#{price},#{period})
+    </insert>
+
+
+
+    <select id="getBills" resultType="Bill">
+        select * from orderbill
+    </select>
+
+
+</mapper>

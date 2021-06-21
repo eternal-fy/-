@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ld.dao.AdministratorDao">
+    <insert id="addAdministrator"  parameterType="Administrator">
+       insert into Administrator(name,age,priority) values(
+       #{name},#{age},#{priority})
+    </insert>
+    <select id="getAdministrators" resultType="Administrator">
+        select * from administrator
+    </select>
+
+
+</mapper>
